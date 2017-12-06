@@ -1,0 +1,35 @@
+.MODEL TINY
+.STACK
+.DATA
+b5b567         DW 0H
+d3             DW 0H
+c3bd           DW 0H
+.CODE
+START:
+	MOV AX,0H
+	ADD AX,1
+	MOV b5b567,AX
+	MOV AX,0H
+	ADD AX,0
+	MOV d3,AX
+	Label1: 	MOV AX,b5b567
+	MOV BX,7
+	CMP AX,BX
+	JG Label2
+	MOV AH,1
+	INT 21H
+	MOV c3bd,AX
+	MOV AX,0H
+	ADD AX,d3
+	ADD AX,c3bd
+	MOV d3,AX
+	MOV AX,0H
+	ADD AX,b5b567
+	ADD AX,1
+	MOV b5b567,AX
+	JMP Label1
+	Label2: 	MOV DX,d3
+	MOV AH,2
+	INT 21H
+
+END START

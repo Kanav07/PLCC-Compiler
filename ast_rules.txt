@@ -1,0 +1,73 @@
+1<program> ===> <otherFunctions> <mainFunction>
+2<mainFunction>===> TK_MAIN <stmts> TK_END
+3<otherFunctions>===> <function><otherFunctions> // removed "eps"
+4<function>===>TK_FUNID<input_par><output_par><stmts>TK_END
+5<input_par>===>TK_INPUT  TK_LIST  <parameter_list> 
+6<output_par>===>TK_OUTPUT  TK_LIST  <parameter_list>  //removed "eps''
+7<parameter_list>===><dataType> TK_ID <remaining_list>
+8<dataType>===>TK_INT //removing <primitiveDatatype> <constructedDatatype>
+8<dataType>===> TK_REAL
+10<DataType>===>TK_RECORD TK_RECORDID
+11<remaining_list>===> <parameter_list> // removing "eps'' 
+12<stmts>===><typeDefinitions> <declarations> <otherStmts><returnStmt>
+13<typeDefinitions>===><typeDefinition><typeDefinitions> //removing ''eps'' 
+14<typeDefinition>===>TK_RECORD TK_RECORDID <fieldDefinitions> TK_ENDRECORD //removing TK_SEM
+15<fieldDefinitions>===> <fieldDefinition><fieldDefinition><moreFields>
+16<fieldDefinition>===> <dataType> TK_FIELDID //removing TK_TYPE TK_SEM TK_COLON
+17<moreFields>===><fieldDefinition><moreFields> 
+18<declarations> ===> <declaration><declarations>//removing "eps''
+19<declaration>===> <dataType>  TK_ID <global_or_not>//removing TK_TYPE TK_SEM TK_COLON
+20<global_or_not>===>TK_GLOBAL //removing ''TK_COLON"
+21<otherStmts>===> <stmt><otherStmts> //removing ''eps''
+22<stmt>===> <assignmentStmt> 
+22<stmt>===><iterativeStmt>
+22<stmt>===><conditionalStmt>
+22<stmt>===><ioStmt>
+22<stmt>===><funCallStmt>
+23<assignmentStmt>===><SingleOrRecId> TK_ASSIGNOP <arithmeticExpression> //removing ''TK_SEM"
+24<singleOrRecId>===>TK_ID<single> 
+24<single>===>TK_DOT TK_FIELD//removing ''eps''
+25<funCallStmt>===><outputParameters> TK_CALL TK_FUNID <inputParameters>  //removing TK_WITH TK_PARAMETERS TK_SEM
+26<outputParameters> ==>  <idList>  TK_ASSIGNOP //removing ''TK_SQL'' ''TK_SQR" ''eps''
+27<inputParameters>===>  <idList> //removing TK_SQL TK_SQR
+28<iterativeStmt>===> TK_WHILE  <booleanExpression> <stmt><otherStmts> TK_ENDWHILE //removing TK_CL TK_OP
+29<conditionalStmt>===> TK_IF  <booleanExpression>  TK_THEN <stmt><otherStmts> <elsePart>//removing TK_CL TK_OP
+30<elsePart>===>TK_ELSE <stmt><otherStmts> TK_ENDIF 
+30<elsePart>===>TK_ENDIF
+31<ioStmt>===> TK_READ  <singleOrRecId>  //removing TK_CL TK_OP TK_SEM
+31<ioStmt> ===> TK_WRITE <allVar> //removing TK_CL TK_OP TK_SEM
+32<allVar>===><var>
+32<allVar>===>TK_RECORDID TK_DOT TK_FEILDID
+33<arithmeticExpression> ===> <term> <expPrime>
+34<expPrime> ===> <lowPrecedenceOperators> <term> <expPrime> //removing ''eps''
+35<term>===> <factor> <termPrime>
+36<termPrime> ===> <highPrecedenceOperator><factor> <termPrime>//removing ''eps''
+37<factor> ===> <arithmeticExpression> //removing TK_OP TK_CL 
+37<factor> ===> <all>
+38<highPrecedenceOperator>===> TK_MUL 
+38<highPrecedenceOperator>===> TK_DIV
+39<lowPrecedenceOperators> ===> TK_PLUS 
+39<lowPrecedenceOperators> ===>TK_MINUS
+40<all>===> TK_ID 
+40<all>===>TK_NUM
+40<all>===>TK_RNUM 
+40<all>===>TK_RECORDID <temp>//removing ''eps'' 
+41<temp>===> TK_DOT TK_FIELDID
+42<booleanExpression>===><booleanExpression> <logicalOp> <booleanExpression>//removing TK_OP TK_CL 
+42<booleanExpression>===> <var> <relationalOp> <var>
+42<booleanExpression>===> TK_NOT <booleanExpression>
+43<var>===> <singleOrRecId> 
+43<var>===> TK_NUM 
+43<var>===> TK_RNUM
+44<logicalOp>===>TK_AND 
+44<logicalOp>===>TK_OR
+45<relationalOp>===> TK_LT 
+45<relationalOp>===> TK_LE 
+45<relationalOp>===> TK_EQ 
+45<relationalOp>===> TK_GT 
+45<relationalOp>===> TK_GE 
+45<relationalOp>===> TK_NE
+46<returnStmt>===>TK_RETURN <optionalReturn> //removing TK_SEM
+47<optionalReturn>===> <idList>//removing TK_SQL TK_SQR //removing ''eps''
+48<idList>===> TK_ID <more_ids>
+49<more_ids>===> <idList> //removing TK_COMMA ''eps''

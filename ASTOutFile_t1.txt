@@ -1,0 +1,165 @@
+           <program>                 ----                 ----       isNotaLeafNode                 ----                 ----            <program>
+
+          <function>                 ----                 ----       isNotaLeafNode                 ----            <program>           <function>
+
+               _sumN             TK_FUNID                    4          isaLeafNode                 ----           <function>                 ----
+
+         <input_par>                 ----                 ----       isNotaLeafNode                 ----           <function>          <input_par>
+
+               input             TK_INPUT                    4          isaLeafNode                 ----          <input_par>                 ----
+
+                list              TK_LIST                    4          isaLeafNode                 ----          <input_par>                 ----
+
+    <parameter_list>                 ----                 ----       isNotaLeafNode                 ----          <input_par>     <parameter_list>
+
+                 int               TK_INT                    4          isaLeafNode                 ----     <parameter_list>                 ----
+
+              d5cc34                TK_ID                    4          isaLeafNode                 ----     <parameter_list>                 ----
+
+        <output_par>                 ----                 ----       isNotaLeafNode                 ----           <function>         <output_par>
+
+              output            TK_OUTPUT                    5          isaLeafNode                 ----         <output_par>                 ----
+
+                list              TK_LIST                    5          isaLeafNode                 ----         <output_par>                 ----
+
+    <parameter_list>                 ----                 ----       isNotaLeafNode                 ----         <output_par>     <parameter_list>
+
+                real              TK_REAL                    5          isaLeafNode                 ----     <parameter_list>                 ----
+
+                  d3                TK_ID                    5          isaLeafNode                 ----     <parameter_list>                 ----
+
+             <stmts>                 ----                 ----       isNotaLeafNode                 ----           <function>              <stmts>
+
+      <declarations>                 ----                 ----       isNotaLeafNode                 ----              <stmts>       <declarations>
+
+       <declaration>                 ----                 ----       isNotaLeafNode                 ----       <declarations>        <declaration>
+
+                type              TK_TYPE                    6          isaLeafNode                 ----        <declaration>                 ----
+
+                 int               TK_INT                    6          isaLeafNode                 ----        <declaration>                 ----
+
+              b5b567                TK_ID                    6          isaLeafNode                 ----        <declaration>                 ----
+
+       <declaration>                 ----                 ----       isNotaLeafNode                 ----       <declarations>        <declaration>
+
+                type              TK_TYPE                    7          isaLeafNode                 ----        <declaration>                 ----
+
+                 int               TK_INT                    7          isaLeafNode                 ----        <declaration>                 ----
+
+                c3b3                TK_ID                    7          isaLeafNode                 ----        <declaration>                 ----
+
+        <otherStmts>                 ----                 ----       isNotaLeafNode                 ----              <stmts>         <otherStmts>
+
+                <---                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>          TK_ASSIGNOP
+
+              b5b567                TK_ID                    8          isaLeafNode                 ----                 <---                 ----
+
+                   1               TK_NUM                    8          isaLeafNode                    1                 <---                 ----
+
+        <otherStmts>                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>         <otherStmts>
+
+                <---                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>          TK_ASSIGNOP
+
+                  d3                TK_ID                    9          isaLeafNode                 ----                 <---                 ----
+
+                0.00              TK_RNUM                    9          isaLeafNode                 0.00                 <---                 ----
+
+     <iterativeStmt>                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>      <iterativeStmt>
+
+               while             TK_WHILE                   10          isaLeafNode                 ----      <iterativeStmt>                 ----
+
+                  <=                 ----                 ----       isNotaLeafNode                 ----      <iterativeStmt>                TK_LE
+
+              b5b567                TK_ID                   10          isaLeafNode                 ----                   <=                 ----
+
+              d5cc34                TK_ID                   10          isaLeafNode                 ----                   <=                 ----
+
+            <ioStmt>                 ----                 ----       isNotaLeafNode                 ----      <iterativeStmt>             <ioStmt>
+
+                read              TK_READ                   11          isaLeafNode                 ----             <ioStmt>                 ----
+
+                c3b3                TK_ID                   11          isaLeafNode                 ----             <ioStmt>                 ----
+
+        <otherStmts>                 ----                 ----       isNotaLeafNode                 ----      <iterativeStmt>         <otherStmts>
+
+                <---                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>          TK_ASSIGNOP
+
+                  d3                TK_ID                   12          isaLeafNode                 ----                 <---                 ----
+
+<arithmeticExpression>                 ----                 ----       isNotaLeafNode                 ----                 <--- <arithmeticExpression>
+
+                  d3                TK_ID                   12          isaLeafNode                 ---- <arithmeticExpression>                 ----
+
+                   +                 ----                 ----       isNotaLeafNode                 ---- <arithmeticExpression>              TK_PLUS
+
+                c3b3                TK_ID                   12          isaLeafNode                 ----                    +                 ----
+
+                <---                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>          TK_ASSIGNOP
+
+              b5b567                TK_ID                   13          isaLeafNode                 ----                 <---                 ----
+
+<arithmeticExpression>                 ----                 ----       isNotaLeafNode                 ----                 <--- <arithmeticExpression>
+
+              b5b567                TK_ID                   13          isaLeafNode                 ---- <arithmeticExpression>                 ----
+
+                   +                 ----                 ----       isNotaLeafNode                 ---- <arithmeticExpression>              TK_PLUS
+
+                   1               TK_NUM                   13          isaLeafNode                    1                    +                 ----
+
+        <returnStmt>                 ----                 ----       isNotaLeafNode                 ----              <stmts>         <returnStmt>
+
+              return            TK_RETURN                   15          isaLeafNode                 ----         <returnStmt>                 ----
+
+                  d3                TK_ID                   15          isaLeafNode                 ----         <returnStmt>                 ----
+
+                 end               TK_END                   16          isaLeafNode                 ----           <function>                 ----
+
+      <mainFunction>                 ----                 ----       isNotaLeafNode                 ----            <program>       <mainFunction>
+
+               _main              TK_MAIN                   18          isaLeafNode                 ----       <mainFunction>                 ----
+
+             <stmts>                 ----                 ----       isNotaLeafNode                 ----       <mainFunction>              <stmts>
+
+      <declarations>                 ----                 ----       isNotaLeafNode                 ----              <stmts>       <declarations>
+
+       <declaration>                 ----                 ----       isNotaLeafNode                 ----       <declarations>        <declaration>
+
+                type              TK_TYPE                   19          isaLeafNode                 ----        <declaration>                 ----
+
+                 int               TK_INT                   19          isaLeafNode                 ----        <declaration>                 ----
+
+                  b3                TK_ID                   19          isaLeafNode                 ----        <declaration>                 ----
+
+       <declaration>                 ----                 ----       isNotaLeafNode                 ----       <declarations>        <declaration>
+
+                type              TK_TYPE                   20          isaLeafNode                 ----        <declaration>                 ----
+
+                real              TK_REAL                   20          isaLeafNode                 ----        <declaration>                 ----
+
+              c4bd56                TK_ID                   20          isaLeafNode                 ----        <declaration>                 ----
+
+        <otherStmts>                 ----                 ----       isNotaLeafNode                 ----              <stmts>         <otherStmts>
+
+                <---                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>          TK_ASSIGNOP
+
+                  b3                TK_ID                   21          isaLeafNode                 ----                 <---                 ----
+
+                   7               TK_NUM                   21          isaLeafNode                    7                 <---                 ----
+
+        <otherStmts>                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>         <otherStmts>
+
+       <funCallStmt>                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>        <funCallStmt>
+
+                <---                 ----                 ----       isNotaLeafNode                 ----        <funCallStmt>          TK_ASSIGNOP
+
+              c4bd56                TK_ID                   22          isaLeafNode                 ----                 <---                 ----
+
+                call              TK_CALL                   22          isaLeafNode                 ----        <funCallStmt>                 ----
+
+               _sumN             TK_FUNID                   22          isaLeafNode                 ----        <funCallStmt>                 ----
+
+                with              TK_WITH                   22          isaLeafNode                 ----        <funCallStmt>                 ----
+
+                  b3                TK_ID                   22          isaLeafNode                 ----        <funCallStmt>                 ----
+
+            <ioStmt>                 ----                 ----       isNotaLeafNode                 ----         <otherStmts>           

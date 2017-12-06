@@ -1,0 +1,59 @@
+.MODEL TINY
+.STACK
+.DATA
+#marks        struct
+maths      real4 0.0
+physics    real4 0.0
+chemistry  real4 0.0
+#marks          ends
+b5             DW 0H
+d4            #marks        {}
+b5c6          #marks        {}
+d5cb34567      DW 0H
+.CODE
+START:
+	MOV AX,0H
+	ADD AX,1
+	MOV b5,AX
+	MOV AH,1
+	INT 21H
+	MOV b5c6.maths,AX
+	MOV AX,0H
+	ADD AX,0.00
+	MOV b5c6.maths,AX
+	MOV AX,0H
+	ADD AX,0.00
+	MOV b5c6.physics,AX
+	MOV AX,0H
+	ADD AX,0.00
+	MOV b5c6.chemistry,AX
+	Label1: 	MOV AX,b5
+	MOV BX,d5cb34567
+	CMP AX,BX
+	JG Label2
+	MOV AX,0H
+	ADD AX,b5
+	MOV d4,AX
+	MOV AX,0H
+	ADD AX,b5c6
+	ADD AX,d4
+	MOV b5c6,AX
+	MOV AX,0H
+	ADD AX,b5
+	ADD AX,1
+	MOV b5,AX
+	JMP Label1
+	Label2: 	MOV AX,0H
+	ADD AX,b5c6
+	ADD AX,d5cb34567
+	MOV d4,AX
+	MOV DX,d4.maths
+	MOV AH,2
+	INT 21H
+	MOV DX,d4.physics
+	MOV AH,2
+	INT 21H
+	MOV DX,d4.chemistry
+	MOV AH,2
+	INT 21H
+END START
